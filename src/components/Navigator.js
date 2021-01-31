@@ -28,12 +28,17 @@ const categories = [
         icon: <PeopleIcon />,
         active: true,
       },
-      { id: 'Database', icon: <DnsRoundedIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
+      { 
+        id: 'Database',
+        icon: <DnsRoundedIcon />,
+        active: true, 
+      },
+      { id: 'Storage', icon: <PermMediaOutlinedIcon /> , active: true,  },
+      { id: 'Hosting', icon: <PublicIcon /> , active: true,},
+      { id: 'Functions', icon: <SettingsEthernetIcon /> , active: true,},
       {
         id: 'ML Kit',
+        active: true,
         icon: <SettingsInputComponentIcon />,
       },
     ],
@@ -41,9 +46,9 @@ const categories = [
   {
     id: 'Quality',
     children: [
-      { id: 'Analytics', icon: <SettingsIcon /> },
-      { id: 'Performance', icon: <TimerIcon /> },
-      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
+      { id: 'Analytics', icon: <SettingsIcon /> , active: true,},
+      { id: 'Performance', icon: <TimerIcon /> , active: true,},
+      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> , active: true,},
     ],
   },
 ];
@@ -59,9 +64,10 @@ const styles = (theme) => ({
   item: {
     paddingTop: 1,
     paddingBottom: 1,
+    
     color: 'rgba(255, 255, 255, 0.7)',
     '&:hover, &:focus': {
-      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+      backgroundColor: 'rgba(137, 125, 227, 0.08)',
     },
   },
   itemCategory: {
@@ -124,7 +130,7 @@ function Navigator(props) {
               </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active }) => (
-              <ListItem
+              <ListItem 
                 key={childId}
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
