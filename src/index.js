@@ -1,17 +1,13 @@
-import React from 'react'
-import { render } from 'react-dom'
-import './style.css'
+import App from "./app"
 
-const Greeting = () => {
-    return (
-        <div>
-            <h1>Hello from React</h1>
-            <div id="image"></div>
-        </div>
-    )
-}
+import React from 'react';
+import ReactDOM from 'react-dom'; 
 
-render(
-    <Greeting />,
-    document.getElementById('target')
-)
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+
