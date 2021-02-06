@@ -5,22 +5,25 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import {BrowserRouter as Router,Switch,Route,Link as LinkUI ,useRouteMatch,useParams} from "react-router-dom";
+
+
+
 import Navigator from './Navigator';
-import Content from './Content';
-import Header from './Header';
-import LinkHeader from './links/LinkHeader'
-import LinkContent from './links/LinkContent'
-import LinkComp from './links/LinkComp'
-import Copyright from './Copyright'
+import LinkComp from './Links/LinkComp'
+import HomeStatsComp from './HomeStats/HomeStatsComp'
+import MetricsComp from './Metric/MetricsComp'
+import PrinterComp from './Printer/PrinterComp'
+import ProfileComp from './Profile/ProfileComp'
+import RouterComp from './Router/RouterComp'
+import SupportDevComp from './SupportDev/SupportDevComp'
+import SwitchesComp  from './Switches/SwitchesComp'
+import SmartDevComp from './SmartDev/SmartDevComp'
 import {theme,styles} from './lookcss'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link as LinkUI ,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+
+
+
+
 const drawerWidth = 256;
 
 function Paperbase(props) {
@@ -48,39 +51,51 @@ function Paperbase(props) {
             <Navigator PaperProps={{ style: { width: drawerWidth } }} />
           </Hidden>
         </nav>
-       
-
-        <div className={classes.app}>
+               
         <Switch>
           
+          <Route path="/HomeStats">
+            <HomeStatsComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+          
           <Route path="/Links">
-          <LinkComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
-          <main className={classes.main}>
-            <LinkContent />
-          </main>
-          </Route>
-          
-          <Route path="/Printers">
-          <LinkHeader onDrawerToggle={handleDrawerToggle} />
-          <main className={classes.main}>
-            <LinkContent />
-          </main>
-          </Route>
-          
-          <Route path="/">
-          <Header onDrawerToggle={handleDrawerToggle} />
-          <main className={classes.main}>
-            <Content />
-          </main>
+            <LinkComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
           </Route>
 
-        </Switch>
-         
+          <Route path="/Metrics">
+            <MetricsComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+          <Route path="/Printer">
+            <PrinterComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+          <Route path="/Profile">
+            <ProfileComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+          <Route path="/Router">
+            <RouterComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+          <Route path="/SmartDev">
+            <SmartDevComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
           
-          <footer className={classes.footer}>
-            <Copyright />
-          </footer>
-        </div>
+          <Route path="/SupportDev">
+            <SupportDevComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+
+          <Route path="/Switches">
+            <SwitchesComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+          <Route path="/">
+            <HomeStatsComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
+          </Route>
+
+         </Switch>
       
       </div>
     </ThemeProvider>

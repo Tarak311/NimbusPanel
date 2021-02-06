@@ -42,6 +42,11 @@ app.get('/', checkAuthenticated, (req, res) => {
   res.render('index', { name: req.user.name })
 })
 
+app.get('/HomeStats', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
 app.get('/Links', checkAuthenticated, (req, res) => {
   console.log(req.user.email)
   res.render('index', { name: req.user.name })
@@ -52,6 +57,35 @@ app.get('/Metrics', checkAuthenticated, (req, res) => {
   res.render('index', { name: req.user.name })
 })
 
+app.get('/Printer', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/Profile', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/Router', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/SmartDev', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/SupportDev', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/Switches', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
 
 
 function checkAuthenticated(req, res, next) {

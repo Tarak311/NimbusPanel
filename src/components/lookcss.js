@@ -1,11 +1,6 @@
 
-import * as React from 'react';
-import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+
 
 const drawerWidth = 256;
 var theme = createMuiTheme({
@@ -144,6 +139,7 @@ var theme = createMuiTheme({
 
 
 var styles = {
+    
   root: {
     display: 'flex',
     minHeight: '100vh',

@@ -31,7 +31,7 @@ const categories = [
     id: 'Develop',
     children: [
       {
-        id: 'Home Statistics',
+        id: 'HomeStats',
         icon: <PeopleIcon />,
         active: true,
       },
@@ -43,19 +43,17 @@ const categories = [
       { id: 'Metrics', icon: <PermMediaOutlinedIcon /> , active: true,  },
       { id: 'Printers', icon: <PublicIcon /> , active: true,},
       { id: 'Profile', icon: <SettingsEthernetIcon /> , active: true,},
-      {
-        id: 'Devices',
-        active: true,
-        icon: <SettingsInputComponentIcon />,
-      },
+      {id: 'SmartDev', active: true,icon: <SettingsInputComponentIcon />,},
     ],
   },
+  
   {
     id: 'Smart Home Devices',
+    active: true,
     children: [
-      { id: 'Support Devices', icon: <SettingsIcon /> , active: true,},
+      { id: 'SupportDev', icon: <SettingsIcon /> , active: true,},
       { id: 'Switches', icon: <TimerIcon /> , active: true,},
-      { id: 'Routers', icon: <PhonelinkSetupIcon /> , active: true,},
+      { id: 'Router', icon: <PhonelinkSetupIcon /> , active: true,},
     ],
   },
 ];
