@@ -7,27 +7,18 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import LinkContent from './LinkContent'
 import LinkHeader from './LinkHeader'
+import Copyright from './../Copyright'
 export default  class LinkComp extends React.Component 
 {
     render(props)
     {
-        const { classes } = props;
-        const [mobileOpen, setMobileOpen] = React.useState(false);
-      
-        const handleDrawerToggle = () => {
-          setMobileOpen(!mobileOpen);
-        };
-      
+        console.log(this.props)
+        const {classes,onDrawerToggle,state} = this.props
         
+        console.log(this.props.onDrawerToggle)
         return(       
              <div className={classes.app}> 
-                <LinkHeader onDrawerToggle={handleDrawerToggle} />
-                <main className={classes.main}>
-                    <LinkContent />
-                </main>
-                <footer className={classes.footer}>
-                    <Copyright />
-                </footer>
+                <LinkHeader onDrawerToggle={onDrawerToggle} />
             </div>);
 
     }

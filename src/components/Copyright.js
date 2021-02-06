@@ -16,4 +16,4 @@ function Copyright() {
   }
 
 
-  export default withStyles(styles)(Copyright);
+  export default Copyright;
