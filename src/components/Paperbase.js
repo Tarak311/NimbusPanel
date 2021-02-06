@@ -8,6 +8,15 @@ import Link from '@material-ui/core/Link';
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
+import LinkHeader from './LinkHeader'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link as LinkUI ,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 function Copyright() {
   return (
@@ -207,8 +216,21 @@ function Paperbase(props) {
             <Navigator PaperProps={{ style: { width: drawerWidth } }} />
           </Hidden>
         </nav>
+       
+
         <div className={classes.app}>
+        <Switch>
+          <Route path="/Links">
+          <LinkHeader onDrawerToggle={handleDrawerToggle} />
+          </Route>
+          <Route path="/Printers">
           <Header onDrawerToggle={handleDrawerToggle} />
+          </Route>
+          <Route path="/">
+          <Header onDrawerToggle={handleDrawerToggle} />
+          </Route>
+        </Switch>
+         
           <main className={classes.main}>
             <Content />
           </main>
@@ -216,6 +238,7 @@ function Paperbase(props) {
             <Copyright />
           </footer>
         </div>
+      
       </div>
     </ThemeProvider>
   );

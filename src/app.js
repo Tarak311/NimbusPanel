@@ -1,10 +1,16 @@
 import * as React from "react"
+
 import Header from "./components/Header"
 import Content from "./components/Content"
 import Navigator from "./components/Navigator"
 import  Sidemenu from "./components/sidemenu"
 import Panel from "./components/panel"
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Paperbase from "./components/Paperbase"
 import {IconButton } from "@material-ui/core"
 import { Home } from "@material-ui/icons"
@@ -24,12 +30,13 @@ const navLinks = [
   
     render() {
       return (
+        <Router>
         <div>
-
           <Paperbase />
           <Panel />
           <Sidemenu />
         </div>
+        </Router>
       )
     }
   }

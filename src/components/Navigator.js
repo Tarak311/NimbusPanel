@@ -18,37 +18,44 @@ import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponen
 import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 const categories = [
   {
     id: 'Develop',
     children: [
       {
-        id: 'Authentication',
+        id: 'Home Statistics',
         icon: <PeopleIcon />,
         active: true,
       },
       { 
-        id: 'Database',
+        id: 'Links',
         icon: <DnsRoundedIcon />,
         active: true, 
       },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> , active: true,  },
-      { id: 'Hosting', icon: <PublicIcon /> , active: true,},
-      { id: 'Functions', icon: <SettingsEthernetIcon /> , active: true,},
+      { id: 'Metrics', icon: <PermMediaOutlinedIcon /> , active: true,  },
+      { id: 'Printers', icon: <PublicIcon /> , active: true,},
+      { id: 'Profile', icon: <SettingsEthernetIcon /> , active: true,},
       {
-        id: 'ML Kit',
+        id: 'Devices',
         active: true,
         icon: <SettingsInputComponentIcon />,
       },
     ],
   },
   {
-    id: 'Quality',
+    id: 'Smart Home Devices',
     children: [
-      { id: 'Analytics', icon: <SettingsIcon /> , active: true,},
-      { id: 'Performance', icon: <TimerIcon /> , active: true,},
-      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> , active: true,},
+      { id: 'Support Devices', icon: <SettingsIcon /> , active: true,},
+      { id: 'Switches', icon: <TimerIcon /> , active: true,},
+      { id: 'Routers', icon: <PhonelinkSetupIcon /> , active: true,},
     ],
   },
 ];
@@ -130,12 +137,13 @@ function Navigator(props) {
               </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active }) => (
-              <ListItem 
+              
+                <ListItem 
                 key={childId}
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
-                <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
+                <Link to={childId}><ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon></Link>
                 <ListItemText
                   classes={{
                     primary: classes.itemPrimary,
@@ -144,6 +152,7 @@ function Navigator(props) {
                   {childId}
                 </ListItemText>
               </ListItem>
+            
             ))}
 
             <Divider className={classes.divider} />
