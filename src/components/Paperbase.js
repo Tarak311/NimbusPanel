@@ -8,7 +8,9 @@ import Link from '@material-ui/core/Link';
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
-import LinkHeader from './LinkHeader'
+import LinkHeader from './links/LinkHeader'
+import LinkContent from './links/LinkContent'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -220,20 +222,31 @@ function Paperbase(props) {
 
         <div className={classes.app}>
         <Switch>
+          
           <Route path="/Links">
           <LinkHeader onDrawerToggle={handleDrawerToggle} />
+          <main className={classes.main}>
+            <LinkContent />
+          </main>
           </Route>
+          
           <Route path="/Printers">
-          <Header onDrawerToggle={handleDrawerToggle} />
+          <LinkHeader onDrawerToggle={handleDrawerToggle} />
+          <main className={classes.main}>
+            <LinkContent />
+          </main>
           </Route>
+          
           <Route path="/">
           <Header onDrawerToggle={handleDrawerToggle} />
-          </Route>
-        </Switch>
-         
           <main className={classes.main}>
             <Content />
           </main>
+          </Route>
+
+        </Switch>
+         
+          
           <footer className={classes.footer}>
             <Copyright />
           </footer>

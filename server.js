@@ -42,6 +42,15 @@ app.get('/', checkAuthenticated, (req, res) => {
   res.render('index', { name: req.user.name })
 })
 
+app.get('/Links', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
+
+app.get('/Metrics', checkAuthenticated, (req, res) => {
+  console.log(req.user.email)
+  res.render('index', { name: req.user.name })
+})
 
 
 

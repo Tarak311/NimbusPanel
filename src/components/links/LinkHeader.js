@@ -38,7 +38,7 @@ const styles = (theme) => ({
   },
 });
 
-function Header(props) {
+function LinkHeader(props) {
   const { classes, onDrawerToggle } = props;
 
   return (
@@ -130,9 +130,9 @@ function Header(props) {
   );
 }
 
-Header.propTypes = {
+LinkHeader.propTypes = {
   classes: PropTypes.object.isRequired,
   onDrawerToggle: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(LinkHeader);
