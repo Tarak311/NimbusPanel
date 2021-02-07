@@ -1,8 +1,5 @@
 import * as React from "react"
 
-import Header from "./components/Header"
-import Content from "./components/Content"
-import Navigator from "./components/Navigator"
 import  Sidemenu from "./components/sidemenu"
 import Panel from "./components/panel"
 import {

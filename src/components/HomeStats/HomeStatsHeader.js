@@ -16,6 +16,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import {BrowserRouter as Router,Switch,Route,Link as LinkUI ,useRouteMatch,useParams} from "react-router-dom";
+
+
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
@@ -90,7 +93,7 @@ function HomeStatsHeader(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Authentication
+                Home Stats
               </Typography>
             </Grid>
             <Grid item>
@@ -120,10 +123,10 @@ function HomeStatsHeader(props) {
         elevation={0}
       >
         <Tabs value={0} textColor="inherit">
-          <Tab label="Users" />
-          <Tab label="Sign-in method" />
-          <Tab label="Templates" />
-          <Tab label="Usage" />
+        <LinkUI to='/HomeStats/WaterUsage'> <Tab label="Water Usage" /></LinkUI>
+        <LinkUI to='/HomeStats/Internet'> <Tab label="Internet" /></LinkUI>
+        <LinkUI to='/HomeStats/DeviceConnected'> <Tab label="Devices Connected" /></LinkUI>
+        <LinkUI to='/HomeStats/Electricity'> <Tab label="Electricity" /></LinkUI>
         </Tabs>
       </AppBar>
     </React.Fragment>

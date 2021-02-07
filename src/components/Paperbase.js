@@ -66,7 +66,7 @@ function Paperbase(props) {
             <MetricsComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
           </Route>
 
-          <Route path="/Printer">
+          <Route path="/Printers">
             <PrinterComp onDrawerToggle={handleDrawerToggle} classes={classes}/>
           </Route>
 

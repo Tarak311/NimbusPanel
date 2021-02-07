@@ -57,7 +57,7 @@ app.get('/Metrics', checkAuthenticated, (req, res) => {
   res.render('index', { name: req.user.name })
 })
 
-app.get('/Printer', checkAuthenticated, (req, res) => {
+app.get('/Printers', checkAuthenticated, (req, res) => {
   console.log(req.user.email)
   res.render('index', { name: req.user.name })
 })
