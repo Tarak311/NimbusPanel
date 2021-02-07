@@ -12,6 +12,7 @@ import Internet from './HomeStatsContent/Internet'
 import Electricity from './HomeStatsContent/Electricity'
 import WaterUsage from './HomeStatsContent/WaterUsage'
 import HomeStatsHeader from './HomeStatsHeader'
+import DeviceConnected from './HomeStatsContent/DeviceConnected'
 import Copyright from '../Copyright'
 
 export default  class HomeStatsComp extends React.Component 
@@ -48,10 +49,17 @@ export default  class HomeStatsComp extends React.Component
                         </main>
                     </Route>
 
+                    <Route path="/HomeStats/DeviceConnected">
+                        <main className={classes.main}>
+                            <DeviceConnected />
+                        </main>
+                    </Route>
+
                     <Route path="/HomeStats">
                         <main className={classes.main}>
-                            <Electricity />
+                            <DeviceConnected />
                         </main>
+
                     </Route>
                 </Switch>    
                 

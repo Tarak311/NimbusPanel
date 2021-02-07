@@ -23,6 +23,7 @@ import {
   Switch,
   Route,
   Link,
+  NavLink,
   useRouteMatch,
   useParams
 } from "react-router-dom";
@@ -141,7 +142,7 @@ function Navigator(props) {
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
-                <Link to={childId}><ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon></Link>
+                <NavLink strict to={"/" + childId} replace ><ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon></NavLink>
                 <ListItemText
                   classes={{
                     primary: classes.itemPrimary,
