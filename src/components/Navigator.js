@@ -64,7 +64,7 @@ const styles = (theme) => ({
     paddingBottom: theme.spacing(2),
   },
   categoryHeaderPrimary: {
-    color: theme.palette.common.white,
+    color: theme.palette.common.primary,
   },
   item: {
     paddingTop: 1,
@@ -72,7 +72,7 @@ const styles = (theme) => ({
     
     color: 'rgba(255, 255, 255, 0.7)',
     '&:hover, &:focus': {
-      backgroundColor: 'rgba(137, 125, 227, 0.08)',
+      backgroundColor: 'rgba(14, 1, 227, 0.08)',
     },
   },
   itemCategory: {
@@ -125,7 +125,7 @@ function Navigator(props) {
         </ListItem>
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
-            <ListItem className={classes.categoryHeader}>
+            <ListItem className={classes.categoryHeader,clsx(classes.item, classes.itemActiveItem)}>
               <ListItemText
                 classes={{
                   primary: classes.categoryHeaderPrimary,

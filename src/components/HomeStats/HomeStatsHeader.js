@@ -16,7 +16,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import {BrowserRouter as Router,Switch,Route,Link as LinkUI ,useRouteMatch,useParams} from "react-router-dom";
+import {BrowserRouter as Router,Switch,Route,Link as LinkUI ,useRouteMatch,useParams, NavLink} from "react-router-dom";
 
 
 
@@ -43,7 +43,17 @@ const styles = (theme) => ({
 
 function HomeStatsHeader(props) {
   const { classes, onDrawerToggle } = props;
-
+  const [value, setValue] = React.useState(0);
+  function a11yProps(index) {
+    return {
+      id: `scrollable-force-tab-${index}`,
+      'aria-controls': `scrollable-force-tabpanel-${index}`,
+    };
+  }
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  
   return (
     <React.Fragment>
       <AppBar color="primary" position="sticky" elevation={0}>
@@ -122,11 +132,11 @@ function HomeStatsHeader(props) {
         position="static"
         elevation={0}
       >
-        <Tabs value={0} textColor="inherit">
-        <LinkUI to='/HomeStats/WaterUsage'> <Tab label="Water Usage" /></LinkUI>
-        <LinkUI to='/HomeStats/Internet'> <Tab label="Internet" /></LinkUI>
-        <LinkUI to='/HomeStats/DeviceConnected'> <Tab label="Devices Connected" /></LinkUI>
-        <LinkUI to='/HomeStats/Electricity'> <Tab label="Electricity" /></LinkUI>
+        <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="off" aria-label="scrollable prevent tabs example" indicatorColor="primary" textColor="primary">
+        <Tab label="Water Usage" {...a11yProps(0)} component={LinkUI}  to="/HomeStats/WaterUsage" />
+        <Tab label="Internet"  {...a11yProps(1)} component={LinkUI} to="/HomeStats/Internet"  />
+        <Tab label="Devices Connected" {...a11yProps(3)} component={LinkUI} to='/HomeStats/DeviceConnected'/>
+        <Tab label="Electricity" {...a11yProps(4)} component={LinkUI} to='/HomeStats/Electricity' />
         </Tabs>
       </AppBar>
     </React.Fragment>

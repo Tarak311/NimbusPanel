@@ -40,6 +40,7 @@ function Electricity(props) {
   const { classes } = props;
 
   return (
+    <div>
     <Paper className={classes.paper}>
       <AppBar
         className={classes.searchBar}
@@ -82,6 +83,12 @@ function Electricity(props) {
         </Typography>
       </div>
     </Paper>
+    <Paper><div className={classes.contentWrapper}>
+        <Typography color="textSecondary" align="center">
+          No users for this project yet
+        </Typography>
+      </div> </Paper>
+     </div>
   );
 }
 
